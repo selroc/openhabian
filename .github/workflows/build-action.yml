@@ -51,7 +51,7 @@ jobs:
            sudo -E ./build.bash rpi
            echo "::set-output name=file::$(ls openhabian-*.img.xz)"
        - name: Archive openHABian 32bit image
-         uses: actions/upload-artifact@v2
+         uses: actions/upload-artifact@v3
          with:
            name: ${{ steps.build.outputs.file }}
            path: ${{ steps.build.outputs.file }}
@@ -85,7 +85,7 @@ jobs:
            sudo -E ./build.bash rpi64
            echo "::set-output name=file::$(ls openhabian-*.img.xz)"
        - name: Archive openHABian 64bit image
-         uses: actions/upload-artifact@v2
+         uses: actions/upload-artifact@v3
          with:
            name: ${{ steps.build.outputs.file }}
            path: ${{ steps.build.outputs.file }}
